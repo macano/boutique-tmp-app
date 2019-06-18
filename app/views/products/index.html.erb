@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="">
+		<img class="logo" src="/assets/website_logo.png" alt="Boutique Retailer Logo">
+
+	  <%= form_tag products_path , method: :get, remote: true do %>
+	  	<div class="autocomplete-items">
+	  		<%= search_field_tag :sku, nil, id: "sku-autocomplete", class:" form-control ui-autocomplete-input-sku", required: true%>
+	  	</div>
+	  <% end %>
+	  
+	  <center>
+	  	<%=submit_tag 'LOOK UP PRICE', id: "search_price", class: "btn btn-lg btn-warning"%>
+			<%=submit_tag 'LOOK UP LOCATION', id: "search_location", class: "btn btn-lg btn-warning"%>
+	  			
+	  </center>
+  </div>
+  <%=render partial: "products/products_index"%>
+  <%=render partial: "products/edit_price"%>
+</div>

@@ -1,0 +1,84 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.autocomplete-items input[type="submit"] {
+  float: right;
+  width: 10%;
+  position: relative;
+  left: 51%;
+  bottom: 70px;
+  height: 35px;
+}
+
+.stocktake {
+  position: relative;
+  top: 20px;
+}
+.main {
+  width: 100%;
+  float: left;
+  background: black;
+  height: 40px;
+}
+.logo {
+  position: relative;
+  left: 24%;
+  margin: 2% 0 8% 0;
+}
+
+.ui-menu-item-wrapper  {
+  color: black;
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  white-space: normal;
+  font-size:12px;
+  background: #e9ecef;
+  width: 57.8% !important;
+}
+
+.ui-menu-item-wrapper:hover, .ui-menu-item-wrapper:focus {
+  background-color: #f5f5f5;
+  color: #262626;
+  border: none;
+}
+
+.ui-menu{ padding: 0; }
+.form-control.ui-autocomplete-input-sku {
+  padding-left: 30px;
+}
+
+.ui-menu-item {
+  list-style-type: none;
+  padding: 0;
+}
+
+.alert-danger, .alert-success{
+  display: none;
+}
+
+#search_location{
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+.container{
+  margin-top: 10%;
+  max-width: 60%;
+}
+
+.products_list_table{
+  padding: 10px 10px;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #d2b644;
+  border-color: #d2b644;
+}
+
+.btn-warning:hover {
+  color: #fff;
+}
+

@@ -1,0 +1,64 @@
+
+<div class="edit_form">
+    <%=form_tag products_path, method: 'PATCH', remote: true, id: "pick_form" do %>
+    <input type="hidden" name="product[SKU]" value="" id="pro_sku">
+
+     <div class="form-group">
+        <%= label_tag :sku, 'SKU:', class: "control-label" , readonly: true%>
+        <%= text_field_tag :sku, nil,class: "form-control sku", disabled: true%>
+    </div>
+    
+    <div class="form-group">
+        <%= label_tag :name ,'Name:', class: "control-label"%>
+
+        <%= text_field_tag "product[name]", nil,class: "form-control" ,disabled: true%>
+    </div>
+    
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6 pull-left">
+                <%= label_tag :qty_in_stock ,'Quantity:',class: "control-label"%>
+                <%= text_field_tag "product[quantity]", nil, class: "form-control", disabled: true%>
+            </div>
+
+            <div class="col-md-6 pull-left">
+                <%= label_tag :pick_zone ,'Current Pick Zone:',class: "control-label"%>
+                <%= text_field_tag "product[pick_zone]", nil ,class: "form-control", disabled: true%>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= label_tag :pick_zone ,'New Pick Zone:',class: "control-label"%>
+        <%= text_field_tag "product[PickZone]", nil, id: "new_pick_zone", class: "form-control", placeholder: "NEW PICK ZONE", value: "",  required: true, disabled: false%>
+    </div>
+
+    <%=submit_tag "UPDATE LOCATION", class: "btn btn-warning", id: "replace_pick"%>
+    <%end%>
+</div>
+
+<div class="alert alert-success">
+  <strong>Item updated!</strong>
+</div>
+
+<div class="alert alert-danger">
+  <strong class="alert_message">No item found!</strong>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.edit_form, .edit_price_form, .products_list_table').hide();
+        a = "<%=@skus%>";
+        b = a.split("&quot;");
+        $("#sku-autocomplete").autocomplete({
+           source: b,
+           select: function(event, ui){
+                $('.alert-success, .alert-danger').css("display", "none");
+                var sku = ui.item.value;
+                $('.ui-helper-hidden-accessible').hide();
+                $('#pro_sku').val(sku);
+                $('#pro_sku1').val(sku);
+            }
+        });
+    });
+</script>
